@@ -1,4 +1,4 @@
-var APP_URL = 'https://example.form.io';
+var APP_URL = 'https://example.form.io'; // Change this URL for you project URL
 var API_URL = 'https://api.form.io';
 
 angular.module('formioApp').constant('AppConfig', {
@@ -7,7 +7,8 @@ angular.module('formioApp').constant('AppConfig', {
   forms: {
     userForm: APP_URL + '/user',
     userLoginForm: APP_URL + '/user/login',
-    userRegisterForm: APP_URL + '/user/register'
+    userRegisterForm: APP_URL + '/user/register',
+    homeForm: APP_URL + '/homeForm'  // Change this for you form endpoint
   },
   resources: {
     user: {

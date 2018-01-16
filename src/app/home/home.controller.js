@@ -6,14 +6,15 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController($rootScope,$state,$scope,Formio, FormioAlerts) {
+  function HomeController($rootScope,$state,$scope,Formio, FormioAlerts,AppConfig) {
     $rootScope.whenReady.then(function () {
 
       if (!$rootScope.authenticated) {
         $state.go('auth.login');
       }
     });
-    $scope.form = new Formio('https://example.form.io/example');
+    $scope.formUrl = AppConfig.forms.homeForm;
+    $scope.form = new Formio(AppConfig.forms.homeForm);
     $scope.submission = {};
 
     $scope.$on('formSubmit',function (event) {
